@@ -346,7 +346,7 @@ GibbsPGGM = function(Y, X, ListHyp = list(a=1, b=1), type = "s", NGrp = c(), shr
           
           # Update of the probability of inclusion of this group
           if (k > N-Nd){
-            ProbInc[g] = ProbInc[g]+pr
+            ProbInc[g] = ProbInc[g]+(1-pr)
           }
 
           # U(0,1) in [O, pr] : exactly zero
@@ -469,7 +469,7 @@ GibbsPGGM = function(Y, X, ListHyp = list(a=1, b=1), type = "s", NGrp = c(), shr
           
           # Update of the probability of inclusion of this group
           if (k > N-Nd){
-            ProbInc[g] = ProbInc[g]+pr
+            ProbInc[g] = ProbInc[g]+(1-pr)
           }
           
           # U(0,1) in [O, pr] : exactly zero
