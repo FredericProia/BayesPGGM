@@ -6,7 +6,7 @@ library(expm)
 
 # Gibbs samplers for the Bayesian PGGMs described in the paper
 # "A Bayesian approach for partial Gaussian graphical models with sparsity" (E. Okome Obiang, P. Jézéquel, F. Proïa), 2022.
-GibbsPGGM = function(Y, X, ListHyp = list(a=1, b=1), type = "s", NGrp = c(), shr = "a", std = TRUE, initl = 1, Or = NA, N = 10000, Nd = 5000){
+GibbsPGGM = function(Y, X, ListHyp = list(a=1, b=1), type = "s", NGrp = c(), shr = "a", std = FALSE, initl = 1, Or = NA, N = 10000, Nd = 5000){
   
   # Arguments :
   # Y : matrix of (n x q) outcomes
@@ -15,7 +15,7 @@ GibbsPGGM = function(Y, X, ListHyp = list(a=1, b=1), type = "s", NGrp = c(), shr
   # type : "s" (Sparse, default), "gs" (Group-Sparse), "sgs" (Sparse-Group-Sparse), "ns" (No Sparsity)
   # NGrp : vector of group sizes (empty if no group structure, default)
   # shr : "g" (global shrinkage) or "a" (adaptative shrinkage, default)
-  # std : boolean, standardization of X and Y before running (true, default)
+  # std : boolean, standardization of X and Y before running (false, default)
   # initl : initial value of the second parameter in the Gamma prior for the shrinkage parameter (1, default)
   # Or : list with Oy and Lam (and Nu for (sgs)) to run the oracle mode, else NA (default) 
   # N : number of iterations of the sampler (10000, default)
