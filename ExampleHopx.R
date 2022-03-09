@@ -10,6 +10,8 @@ X = as.matrix(data.X)
 q = ncol(Y)
 p = ncol(X)
 n = nrow(X)
+
+# Groups naturally arise from chromosomes
 NGrp = c(74, 67, 63, 60, 39, 45, 52, 43, 31, 51, 21, 26, 33, 22, 15, 27, 18, 30, 34, 19)
 
 # Group-sparsity with adaptative shrinkage
