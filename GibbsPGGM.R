@@ -5,13 +5,13 @@ library(ks)
 library(expm)
 
 # Gibbs samplers for the Bayesian PGGMs described in the paper
-# "A Bayesian approach for partial Gaussian graphical models with sparsity" (E. Okome Obiang, P. Jézéquel, F. Proïa), 2022.
-GibbsPGGM = function(Y, X, ListHyp, type = "s", NGrp = c(), shr = "a", std = FALSE, initl = 1, Or = NA, N = 10000, Nd = 5000){
+# "A Bayesian approach for partial Gaussian graphical models with sparsity" (E. Okome Obiang, P. JÃ©zÃ©quel, F. ProÃ¯a), 2022.
+GibbsPGGM = function(Y, X, ListHyp = list(a=1, b=1), type = "s", NGrp = c(), shr = "a", std = FALSE, initl = 1, Or = NA, N = 10000, Nd = 5000){
   
   # Arguments :
   # Y : matrix of (n x q) outcomes
   # X : matrix of (n x p) predictors
-  # ListHyp : list of hyperparameters (a, b) or (a1, b1, a2, b2) for the prior spike probability
+  # ListHyp : list of hyperparameters (a, b) or (a1, b1, a2, b2) for the prior spike probability ((1,1), default)
   # type : "s" (Sparse, default), "gs" (Group-Sparse), "sgs" (Sparse-Group-Sparse), "ns" (No Sparsity)
   # NGrp : vector of group sizes (empty if no group structure, default)
   # shr : "g" (global shrinkage) or "a" (adaptative shrinkage, default)
